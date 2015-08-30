@@ -52,10 +52,12 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods-Max/IQKeyboardManager.framework'
   install_framework 'Pods-Max/Realm.framework'
   install_framework 'Pods-Max/RealmSwift.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods-Max/IQKeyboardManager.framework'
   install_framework 'Pods-Max/Realm.framework'
   install_framework 'Pods-Max/RealmSwift.framework'
 fi

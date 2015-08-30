@@ -90,13 +90,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		F1C7E7351B8FC749000F1AA0 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		F1F3A80B1B8FBAD3005715C2 = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +113,6 @@
 			children = (
 				F1C7E7331B8FC749000F1AA0 /* Models */,
 				F1C7E7341B8FC749000F1AA0 /* ViewControllers */,
-				F1C7E7351B8FC749000F1AA0 /* Views */,
 				F1F3A8171B8FBAD3005715C2 /* AppDelegate.swift */,
 				F1F3A81B1B8FBAD3005715C2 /* Main.storyboard */,
 				F1B047DD1B92A11C00695E53 /* LaunchScreen.xib */,

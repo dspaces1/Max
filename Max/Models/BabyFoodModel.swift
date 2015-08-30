@@ -9,20 +9,21 @@
 import Foundation
 import RealmSwift
 
-class BreastMilk: Object {
- 
-    dynamic var timeFeed: NSDate = NSDate()
-    dynamic var leftBreastFeedTimeLength: Int = 0
-    dynamic var rightBreastFeedTimeLength: Int = 0
-    
-}
+//class BreastMilk: Object {
+// 
+//    dynamic var timeFeed: NSDate = NSDate()
+//    dynamic var leftBreastFeedTimeLength: Int = 0
+//    dynamic var rightBreastFeedTimeLength: Int = 0
+//    
+//}
+//
+//
+//class FormulaMilk: Object {
+//    
+//    dynamic var timeFeed: NSDate = NSDate()
+//    dynamic var ouncesFeed: Int = 0
+//}
 
-
-class FormulaMilk: Object {
-    
-    dynamic var timeFeed: NSDate = NSDate()
-    dynamic var ouncesFeed: Int = 0
-}
 
 class BabyFood: Object {
     
