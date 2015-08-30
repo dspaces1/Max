@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>11F28FD4-2780-4D88-BC87-3847A4330E93</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Max</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>842BAFFA35D0E90EB43C13BF8842BA9B50B8CCCE</key>
+		<string>https://github.com/dspaces1/Max.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Max.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>842BAFFA35D0E90EB43C13BF8842BA9B50B8CCCE</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dspaces1/Max.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>842BAFFA35D0E90EB43C13BF8842BA9B50B8CCCE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>842BAFFA35D0E90EB43C13BF8842BA9B50B8CCCE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Max</string>
+		</dict>
+	</array>
+</dict>
+</plist>
