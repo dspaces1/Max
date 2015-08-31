@@ -41,13 +41,18 @@ class BreastFeedingAmountViewController: UIViewController {
         let newCell = BabyFood()
         let realm = Realm()
         
-        realm.beginWrite()
         newCell.typeOfFoodTitle = "Breast Milk"
         newCell.descriptionText = "L: \(leftBobTime) minutes   R: \(rightBobTime) minutes"
         newCell.timeCreated = NSDate()
         
+        realm.beginWrite()
+        realm.add(newCell)
         realm.commitWrite()
+        
+        navigationController?.popViewControllerAnimated(true)
     }
+    
+    
     
     func displayMissingFieldAlert() {
         let missingAlert = UIAlertController(title: "Missing Field", message: "Make sure all fields are filled in.", preferredStyle: UIAlertControllerStyle.Alert)

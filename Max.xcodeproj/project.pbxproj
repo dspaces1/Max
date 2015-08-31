@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7EAB0BF99DD55549BCB3751E /* Pods_Max.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBF802BFDA6F103D8F180DD /* Pods_Max.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F13458A91B9379980085C9F2 /* FeedingTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13458A81B9379980085C9F2 /* FeedingTimeTableViewCell.swift */; };
 		F1B047DE1B92A11C00695E53 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B047DD1B92A11C00695E53 /* LaunchScreen.xib */; };
 		F1C7E7371B903292000F1AA0 /* LogPoopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7E7361B903292000F1AA0 /* LogPoopsViewController.swift */; };
 		F1C7E7391B90D4BD000F1AA0 /* BabyPoopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C7E7381B90D4BD000F1AA0 /* BabyPoopModel.swift */; };
@@ -25,6 +26,7 @@
 		22183537F2CD771A9B7BD287 /* Pods-Max.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Max.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Max/Pods-Max.debug.xcconfig"; sourceTree = "<group>"; };
 		B335AF4FF21712B3BA66B631 /* Pods-Max.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Max.release.xcconfig"; path = "Pods/Target Support Files/Pods-Max/Pods-Max.release.xcconfig"; sourceTree = "<group>"; };
 		BCBF802BFDA6F103D8F180DD /* Pods_Max.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Max.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F13458A81B9379980085C9F2 /* FeedingTimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedingTimeTableViewCell.swift; sourceTree = "<group>"; };
 		F1B047DD1B92A11C00695E53 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F1C7E7361B903292000F1AA0 /* LogPoopsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPoopsViewController.swift; sourceTree = "<group>"; };
 		F1C7E7381B90D4BD000F1AA0 /* BabyPoopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyPoopModel.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F1AD2B541B9377F900572C4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F13458A81B9379980085C9F2 /* FeedingTimeTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F1C7E7331B8FC749000F1AA0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		F1F3A8161B8FBAD3005715C2 /* Max */ = {
 			isa = PBXGroup;
 			children = (
+				F1AD2B541B9377F900572C4F /* View */,
 				F1C7E7331B8FC749000F1AA0 /* Models */,
 				F1C7E7341B8FC749000F1AA0 /* ViewControllers */,
 				F1F3A8171B8FBAD3005715C2 /* AppDelegate.swift */,
@@ -156,6 +167,7 @@
 				TargetAttributes = {
 					F1F3A8131B8FBAD3005715C2 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = JDRSLM49MW;
 					};
 				};
 			};
@@ -250,6 +262,7 @@
 				F1F3A8181B8FBAD3005715C2 /* AppDelegate.swift in Sources */,
 				F1C7E7451B925758000F1AA0 /* BabyFoodModel.swift in Sources */,
 				F1C7E7371B903292000F1AA0 /* LogPoopsViewController.swift in Sources */,
+				F13458A91B9379980085C9F2 /* FeedingTimeTableViewCell.swift in Sources */,
 				F1C7E7391B90D4BD000F1AA0 /* BabyPoopModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,11 +369,14 @@
 			baseConfigurationReference = 22183537F2CD771A9B7BD287 /* Pods-Max.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Max/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SpaceInc.Max;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -369,11 +385,14 @@
 			baseConfigurationReference = B335AF4FF21712B3BA66B631 /* Pods-Max.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Max/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SpaceInc.Max;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

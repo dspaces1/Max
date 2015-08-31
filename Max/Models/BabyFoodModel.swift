@@ -33,3 +33,29 @@ class BabyFood: Object {
 
 }
 
+class FeedingTimes {
+    
+    let realm = Realm()
+    var allFeedingTimes:Results<BabyFood>!
+    
+    init() {
+        allFeedingTimes = getAllFeedingTimes()
+    }
+    
+    func getLastestFeedTime() -> String {
+        var timeString: String = "0:00"
+        
+        if allFeedingTimes.count > 0 {
+            timeString = FeedingTimeTableViewCell.timeFormatter.stringFromDate(allFeedingTimes[allFeedingTimes.count - 1].timeCreated)
+        }
+        
+        return timeString
+    }
+    
+    func getAllFeedingTimes() -> Results<BabyFood> {
+        
+        let allFeedTimes: Results<BabyFood> = realm.objects(BabyFood)
+        return allFeedTimes
+    }
+    
+}

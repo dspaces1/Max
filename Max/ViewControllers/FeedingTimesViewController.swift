@@ -13,7 +13,10 @@ import RealmSwift
 class FeedingTimesViewController: UIViewController {
 
     
+    @IBOutlet weak var feedingTableView: UITableView!
     @IBOutlet weak var lastTimeFeedLabel: UILabel!
+    
+    var feedingTimes:FeedingTimes!
     
     @IBAction func addFeedingTime(sender: AnyObject) {
         
@@ -41,65 +44,57 @@ class FeedingTimesViewController: UIViewController {
     
     
     
-    func viewSetUp() {
-        
+    func updateFeedingTimeData() {
+        feedingTimes = FeedingTimes()
+        lastTimeFeedLabel.text = feedingTimes.getLastestFeedTime()
+        feedingTableView.reloadData()
     }
     
-    func getLastestFeedTime() -> String {
-        var timeString: String = "0:00"
-        
-        let realm = Realm()
-        let lastFeedTime = realm.objects(BabyFood)
-        
-        if lastFeedTime.count > 0 {
-            
-        } else {
-            
-        }
-        
-        return timeString
-    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewSetUp()
-
-    }
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        feedingTableView.dataSource = self
         
-        if segue.identifier == "addBreastFeedTime" {
-            
-            let addBreastFeedView: BreastFeedingAmountViewController = segue.destinationViewController as! BreastFeedingAmountViewController
-            
-            
-            
-        } else if segue.identifier == "addFormulaFeedTime" {
-            
-            let addFormulaFeedView: FormulaFeedingAmountViewController = segue.destinationViewController as! FormulaFeedingAmountViewController
-            
-            
-        }
-
 
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        updateFeedingTimeData()
+    }
+    
 
 }
+
+extension FeedingTimesViewController: UITableViewDataSource {
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return feedingTimes.allFeedingTimes.count
+    }
+    
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("FeedingCells", forIndexPath: indexPath) as! FeedingTimeTableViewCell
+        
+        let reverse = feedingTimes.allFeedingTimes
+        let currentRow = reverse[reverse.count - 1 - indexPath.row]
+        
+        cell.typeOfFeedingTitleLabel.text = currentRow.typeOfFoodTitle
+        cell.descriptionOfFeeding.text = currentRow.descriptionText
+        cell.timeFeedLabel.text = FeedingTimeTableViewCell.timeFormatter.stringFromDate(currentRow.timeCreated)
+        cell.dateFeedLabel.text = FeedingTimeTableViewCell.dateFormatter.stringFromDate(currentRow.timeCreated)
+
+        
+        
+        return cell
+    }
+    
+}
+
+
