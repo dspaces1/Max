@@ -11,6 +11,7 @@ import RealmSwift
 
 class FormulaFeedingAmountViewController: UIViewController {
 
+    @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var amountOfFormulaLabel: UITextField!
     
     
@@ -21,7 +22,7 @@ class FormulaFeedingAmountViewController: UIViewController {
     
     func createFeedingCell() {
         
-        if let formulaAmount = amountOfFormulaLabel.text.toInt(){
+        if let formulaAmount = amountOfFormulaLabel.text{
             
             writeToRealmWithNewCell(formulaOunces: formulaAmount)
             
@@ -37,14 +38,14 @@ class FormulaFeedingAmountViewController: UIViewController {
         presentViewController(missingAlert, animated: true, completion: nil)
     }
     
-    func writeToRealmWithNewCell(#formulaOunces: Int) {
+    func writeToRealmWithNewCell(#formulaOunces: String) {
         
         let newCell = BabyFood()
         let realm = Realm()
         
         newCell.typeOfFoodTitle = "Formula"
         newCell.descriptionText = "Ounces: \(formulaOunces)"
-        newCell.timeCreated = NSDate()
+        newCell.timeCreated = timePicker.date
         
         realm.beginWrite()
         realm.add(newCell)

@@ -15,6 +15,7 @@ class BreastFeedingAmountViewController: UIViewController {
     @IBOutlet weak var rightBoobTimeTextField: UITextField!
     
     
+    @IBOutlet weak var timePicker: UIDatePicker!
     
     
     @IBAction func submitFeedingTime(sender: AnyObject) {
@@ -43,7 +44,8 @@ class BreastFeedingAmountViewController: UIViewController {
         
         newCell.typeOfFoodTitle = "Breast Milk"
         newCell.descriptionText = "L: \(leftBobTime) minutes   R: \(rightBobTime) minutes"
-        newCell.timeCreated = NSDate()
+        
+        newCell.timeCreated = timePicker.date
         
         realm.beginWrite()
         realm.add(newCell)

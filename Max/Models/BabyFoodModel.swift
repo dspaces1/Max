@@ -46,7 +46,9 @@ class FeedingTimes {
         var timeString: String = "0:00"
         
         if allFeedingTimes.count > 0 {
-            timeString = FeedingTimeTableViewCell.timeFormatter.stringFromDate(allFeedingTimes[allFeedingTimes.count - 1].timeCreated)
+            let feedTimeInOrder = allFeedingTimes.sorted("timeCreated", ascending: false)
+            
+            timeString = FeedingTimeTableViewCell.timeFormatter.stringFromDate(feedTimeInOrder[0].timeCreated)
         }
         
         return timeString

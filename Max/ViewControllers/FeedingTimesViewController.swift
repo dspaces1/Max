@@ -82,8 +82,8 @@ extension FeedingTimesViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("FeedingCells", forIndexPath: indexPath) as! FeedingTimeTableViewCell
         
-        let reverse = feedingTimes.allFeedingTimes
-        let currentRow = reverse[reverse.count - 1 - indexPath.row]
+        let reverse = feedingTimes.allFeedingTimes.sorted("timeCreated", ascending: false)
+        let currentRow = reverse[indexPath.row]
         
         cell.typeOfFeedingTitleLabel.text = currentRow.typeOfFoodTitle
         cell.descriptionOfFeeding.text = currentRow.descriptionText
